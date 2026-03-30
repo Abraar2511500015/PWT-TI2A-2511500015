@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 28, 2026 at 01:50 PM
+-- Generation Time: Mar 30, 2026 at 08:54 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -39,7 +39,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`Id_user`, `Username`, `Password`, `Role`) VALUES
-(1, 'Abraar', '12345', 'admin');
+(1, 'Abraar', '12345', 'admin'),
+(2, 'Heni', '123', 'guru'),
+(3, 'Mike', '1234', 'siswa');
 
 --
 -- Indexes for dumped tables
