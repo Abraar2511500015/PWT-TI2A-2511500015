@@ -24,15 +24,44 @@
         $Nm_mapel = $_POST['Nm_mapel'];
         $Kkm = $_POST['Kkm'];
 
-        $insert = mysqli_query($koneki, "INSERT INTO mapel values ('$Kd_mapel', '$Nm_mapel', '$Kkm')");
+        $insert = mysqli_query($koneksi, "INSERT INTO mapel values ('$Kd_mapel', '$Nm_mapel', '$Kkm')");
         if($insert){
             echo '<div class="alert alert-info-dismissible">
-            <button type="button" class="close" data-dismiss="alert"
-            aria-hidden="true">X</button>
+            <button type="button" class="close" data-dismiss="alert"aria-hidden="true">X</button>
             <h5><i class="icon fas fa-info"></i> Info </h5>
             <h4>Berhasil Disimpan</h4></div>';
             echo '<meta http-equiv="refresh" content="1;url=index.php?page=mapel">';
         }else {
-           
+           echo '<div class="alert alert-warning-dismissible">
+           <button type="button" class="close" data-dismiss="alert"aria-hidden="true">X</button>
+           <h5><i class="icon fas fa-info"></i> Info </h5>
+           <h4>Gagal Disimpan</h4></div>';
         }
     }
+    ?>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-body p-2">
+                        <form method="POST" action="">
+                            <div class="form-group">
+                                <label>Kode Mapel</label>
+                                <input type="text" name="Kd_mapel" value="<?=$hasilkode; ?>" placeholder="Id Kat" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="Nm_mapel">Nama Mapel</label>
+                                <input type="text" name="Nm_mapel" id="Nm_mapel" placeholder="Nama Mapel" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="Kkm">KKM</label>
+                                <input type="text" name="Kkm" id="Kkm" placeholder="KKM" class="form-control">
+                            </div>
+                            <div class="card-footer">
+                                <input type="submit" class="btn btn-primary" name="tambah" value="simpan">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
