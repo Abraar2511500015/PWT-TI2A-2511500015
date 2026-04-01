@@ -46,7 +46,7 @@
                     <div class="card-body p-2">
                         <form method="POST" action="">
                             <div class="form-group">
-                                <label>Kode Mapel</label>
+                                <label for="Kd_mapel">Kode Mapel</label>
                                 <input type="text" name="Kd_mapel" value="<?=$hasilkode; ?>" placeholder="Id Kat" class="form-control" readonly>
                             </div>
                             <div class="form-group">
