@@ -6,13 +6,13 @@
 if(isset($_POST['tambah'])){
     $pl = $_POST['pl'];
     $pb = $_POST['pb'];
-    $cek = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM user WHERE username = '$username' "));
+    $cek = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM users WHERE Username = '$Username' "));
 
-    if($cek)(
-        $update = mysqli_query($koneksi,"UPDATE user SET password = '$pb' WHERE password = '$pl' AND username = '$username' ");
-        if($update)(
+    if($cek){
+        $update = mysqli_query($koneksi,"UPDATE users SET Password = '$pb' WHERE Password = '$pl' AND Username = '$Username' ");
+        if($update) {
             echo "benar";
-        )
-    )
+        }
+    }
 }
 ?>
