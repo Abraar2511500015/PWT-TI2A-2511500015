@@ -11,12 +11,11 @@
     //kode otomatis
     $carikode = mysqli_query($koneksi, "select max(id_ekstra015) from ekstra_2511500015") or die (mysqli_error());
     $datakode = mysqli_fetch_array($carikode);
-    if ($datakode) {
-        $nilaikode = substr($datakode[0], 2);
-        $kode = (int) $nilaikode;
-        $kode = $kode + 1;
-        $hasilkode = "E".str_pad($kode, 3, "0", STR_PAD_LEFT);
-    } else {$hasilkode = "E-"; }
+    if ($datakode[0] != null) {
+        $kode = (int) $datakode[0];
+        $kode ++;
+        $hasilkode = $kode;
+    } else {$hasilkode = 1; }
     $_SESSION["KODE"] = $hasilkode;
 
     if(isset($_POST['tambah'])){
@@ -26,7 +25,8 @@
         $semester015 = $_POST['semester015'];
         $thn_ajaran015 = $_POST['thn_ajaran015'];
 
-        $insert = mysqli_query($koneksi, "INSERT INTO ekstra_2511500015 values ('$id_ekstra015', '$nama_ekstra015', '$ket015', '$semester015', '$thn_ajaran015')");
+
+        $insert = mysqli_query($koneksi, "INSERT INTO ekstra_2511500015 VALUES ('$id_ekstra015', '$nama_ekstra015', '$ket015', '$semester015', '$thn_ajaran015')");
         if($insert){
             echo '<div class="alert alert-info-dismissible">
             <button type="button" class="close" data-dismiss="alert"aria-hidden="true">X</button>

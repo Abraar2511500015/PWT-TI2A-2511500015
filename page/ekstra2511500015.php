@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Ekstrakulikuler</h1>
+        <h1 class="m-0">Data Ekstrakulikuler</h1>
       </div>
     </div>
   </div>
@@ -28,17 +28,17 @@ if(isset($_GET['action'])) {
             <div class="card-body">
                 <a href="index.php?page=tambah_ekstra2511500015" class="btn btn-primary btn-sm">Tambah Ekstrakulikuler</a>
                 <table class="table table-striped">
-                    <tread>
+                    <thead>
                         <tr>
                             <th>No</th>
                             <th>Id Ekstrakulikuler</th>
                             <th>Nama Ekstrakulikuler</th>
                             <th>Keterangan</th>
                             <th>Semester</th>
-                            <th>Tahun Ajran</th>
+                            <th>Tahun Ajaran</th>
                             <th>Aksi</th>
                         </tr>
-                    </tread>
+                    </thead>
                     <?php
                     $no = 0;
                     $query = mysqli_query($koneksi, "SELECT * FROM ekstra_2511500015");
@@ -50,7 +50,7 @@ if(isset($_GET['action'])) {
                                 <td><?= $no;?></td>
                                 <td><?=$result['id_ekstra015']; ?></td>
                                 <td><?=$result['nama_ekstra015']; ?></td>
-                                <td><?=$result['keterangan015']; ?></td>
+                                <td><?=$result['ket015']; ?></td>
                                 <td><?=$result['semester015']; ?></td>
                                 <td><?=$result['thn_ajaran015']; ?></td>
                                 <td>

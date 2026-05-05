@@ -9,7 +9,7 @@
 </div>
 
 <?php
-$Kd = $_GET['Kd'];
+$id = $_GET['id'];
 $edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM ekstra_2511500015 WHERE id_ekstra015='$id'"));
 
 if(isset($_POST['tambah'])){
