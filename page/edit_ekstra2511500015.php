@@ -54,11 +54,19 @@ if(isset($_POST['tambah'])){
                         </div>
                         <div class="form-group">
                             <label for="semester015">Semester</label>
-                            <input type="text" name="semester015" value="<?=$edit['semester015']; ?>" id="semester015" placeholder="Semester" class="form-control">
+                            <select name="semester015" id="semester015" class="form-control">
+                                    <option value="">Pilih Semester</option>
+                                    <option value="Ganjil">Ganjil</option>
+                                    <option value="Genap">Genap</option>
+                                </select>
                         </div>
                         <div class="form-group">
                             <label for="thn_ajaran015">Tahun Ajaran</label>
-                            <input type="text" name="thn_ajaran015" value="<?=$edit['thn_ajaran015']; ?>" id="thn_ajaran015" placeholder="Tahun Ajaran" class="form-control">
+                            <select name="thn_ajaran015" id="thn_ajaran015" class="form-control">
+                                    <option value="">Pilih Tahun Ajaran</option>
+                                    <option value="2022/2023">2024/2025</option>
+                                    <option value="2023/2024">2025/2026</option>
+                            </select>
                         </div>
                         <div class="card-footer">
                             <input type="submit" class="btn btn-primary" name="tambah" value="simpan">

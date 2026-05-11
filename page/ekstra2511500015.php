@@ -28,7 +28,7 @@ if(isset($_GET['action'])) {
             <div class="card-body">
                 <a href="index.php?page=tambah_ekstra2511500015" class="btn btn-primary btn-sm">Tambah Ekstrakulikuler</a>
                 <table class="table table-striped">
-                    <thead>
+                    <tread>
                         <tr>
                             <th>No</th>
                             <th>Id Ekstrakulikuler</th>
@@ -38,7 +38,7 @@ if(isset($_GET['action'])) {
                             <th>Tahun Ajaran</th>
                             <th>Aksi</th>
                         </tr>
-                    </thead>
+                    </tread>
                     <?php
                     $no = 0;
                     $query = mysqli_query($koneksi, "SELECT * FROM ekstra_2511500015");

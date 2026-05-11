@@ -11,11 +11,12 @@
     //kode otomatis
     $carikode = mysqli_query($koneksi, "select max(id_ekstra015) from ekstra_2511500015") or die (mysqli_error());
     $datakode = mysqli_fetch_array($carikode);
-    if ($datakode[0] != null) {
-        $kode = (int) $datakode[0];
-        $kode ++;
-        $hasilkode = $kode;
-    } else {$hasilkode = 1; }
+    if ($datakode) {
+        $nilaikode = substr($datakode[0], 2);
+        $kode = (int) $nilaikode;
+        $kode = $kode + 1;
+        $hasilkode = "E".str_pad($kode, 3, "0", STR_PAD_LEFT);
+    } else {$hasilkode = "E-"; }
     $_SESSION["KODE"] = $hasilkode;
 
     if(isset($_POST['tambah'])){
@@ -26,7 +27,7 @@
         $thn_ajaran015 = $_POST['thn_ajaran015'];
 
 
-        $insert = mysqli_query($koneksi, "INSERT INTO ekstra_2511500015 VALUES ('$id_ekstra015', '$nama_ekstra015', '$ket015', '$semester015', '$thn_ajaran015')");
+        $insert = mysqli_query($koneksi, "INSERT INTO ekstra_2511500015 values ('$id_ekstra015', '$nama_ekstra015', '$ket015', '$semester015', '$thn_ajaran015')");
         if($insert){
             echo '<div class="alert alert-info-dismissible">
             <button type="button" class="close" data-dismiss="alert"aria-hidden="true">X</button>
@@ -61,11 +62,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="semester015">Semester</label>
-                                <input type="text" name="semester015" id="semester015" placeholder="Semester" class="form-control">
+                                <select name="semester015" id="semester015" class="form-control">
+                                    <option value="">Pilih Semester</option>
+                                    <option value="Ganjil">Ganjil</option>
+                                    <option value="Genap">Genap</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="thn_ajaran015">Tahun Ajaran</label>
-                                <input type="text" name="thn_ajaran015" id="thn_ajaran015" placeholder="Tahun Ajaran" class="form-control">
+                                <select name="thn_ajaran015" id="thn_ajaran015" class="form-control">
+                                    <option value="">Pilih Tahun Ajaran</option>
+                                    <option value="2022/2023">2024/2025</option>
+                                    <option value="2023/2024">2025/2026</option>
+                                </select>
                             </div>
                             <div class="card-footer">
                                 <input type="submit" class="btn btn-primary" name="tambah" value="simpan">
