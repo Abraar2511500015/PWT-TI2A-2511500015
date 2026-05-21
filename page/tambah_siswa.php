@@ -68,7 +68,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="Id_kelas">Id Kelas</label>
-                                <input type="text" name="Id_kelas" id="Id_kelas" placeholder="Id Kelas" class="form-control">
+                                <select name="Id_kelas" id="Id_kelas" class="form-control">
+                                    <option selected disabled>-- Pilih Kelas --</option>
+                                    <?php
+                                    $kelas = mysqli_query($koneksi, "SELECT * FROM kelas");
+                                    while ($k = mysqli_fetch_assoc($kelas)) {
+                                        echo "<option value='{$k['Id_kelas']}'>{$k['Nm_kelas']}</option>";
+                                    }
+                                    ?>
+                                </select>
                             </div>
                             <div class="card-footer">
                                 <input type="submit" class="btn btn-primary" name="tambah" value="simpan">

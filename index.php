@@ -123,25 +123,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <?php if ($Role == 'admin') : ?>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?page=guru" class="nav-link active">
+                <a href="index.php?page=guru" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Guru</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=siswa" class="nav-link active">
+                <a href="index.php?page=siswa" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Siswa</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=mapel" class="nav-link active">
+                <a href="index.php?page=mapel" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mata Pelajaran</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=kelas" class="nav-link active">
+                <a href="index.php?page=kelas" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kelas</p>
                 </a>
@@ -149,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?page=ekstra2511500015" class="nav-link active">
+                <a href="index.php?page=ekstra2511500015" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ekstrakulikuler</p>
                 </a>
@@ -197,7 +197,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <?php endif; ?> 
 
           </li>
-              <li class="nav-item">
+              <li class="nav-item menu-open">
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>Transaksi
@@ -206,7 +206,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
                 <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="index.php?page=jadwal" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Jadwal</p>
                 </a>

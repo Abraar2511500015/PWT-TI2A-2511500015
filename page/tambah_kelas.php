@@ -11,11 +11,11 @@
     //kode otomatis
     $carikode = mysqli_query($koneksi, "select max(Id_kelas) from kelas") or die (mysqli_error());
     $datakode = mysqli_fetch_array($carikode);
-    if ($datakode[0] != null) {
-        $kode = (int) $datakode[0];
-        $kode ++;
-        $hasilkode = $kode;
-    } else {$hasilkode = 1; }
+    if ($datakode) {
+        $kode = (int) substr($datakode[0], 2);
+        $kode = $kode + 1;
+        $hasilkode = "K-" . str_pad($kode, 3, "0", STR_PAD_LEFT);
+    } else {$hasilkode = "K-001"; }
     $_SESSION["KODE"] = $hasilkode;
 
     if(isset($_POST['tambah'])){
